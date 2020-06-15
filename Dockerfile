@@ -4,7 +4,6 @@ LABEL maintainer="Paulo Rogério Sales Santos <paulosales@gmail.com>"
 
 #Install Jboss and pwgen
 RUN apk update && \
-  apk add pwgen --no-cache && \
   wget -q http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz && \
   wget -q https://repo1.maven.org/maven2/org/jboss/modules/jboss-modules/1.1.5.GA/jboss-modules-1.1.5.GA.jar && \
   tar zxf jboss-as-7.1.1.Final.tar.gz && \
