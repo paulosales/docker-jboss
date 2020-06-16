@@ -6,8 +6,8 @@ Docker image to run JBoss over openjdk.
 
 ```text
 prsales/jboss:latest
-prsales/prsales/jboss:7
-prsales/openjdk-jboss:7-alpine
+prsales/jboss:7
+prsales/jboss:7-alpine
 ```
 
 ## Usage
