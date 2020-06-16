@@ -4,11 +4,7 @@ Docker image that runs JBoss over openjdk.
 
 ## Image tags
 
-```text
-prsales/jboss:latest
-prsales/jboss:7
-prsales/jboss:7-alpine
-```
+* [`7`, `7-alpine`, `latest`](https://github.com/paulosales/docker-jboss/blob/master/Dockerfile)
 
 ## Usage
 
