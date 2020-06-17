@@ -11,13 +11,14 @@ RUN apk update && \
   rm jboss-as-7.1.1.Final.tar.gz && \
   rm -rf /var/cache/apk/*
 
-RUN sed -i -r 's/jboss.bind.address.management:127.0.0.1/jboss.bind.address.management:0.0.0.0/' /jboss-as-7.1.1.Final/standalone/configuration/standalone.xml
-
 ADD run.sh /run.sh
-
-RUN chmod +x /*.sh
 
 ENV JBOSS_PASS admin
 
+RUN chmod +x /*.sh && \
+  sed -i -r 's/jboss.bind.address.management:127.0.0.1/jboss.bind.address.management:0.0.0.0/' /jboss-as-7.1.1.Final/standalone/configuration/standalone.xml && \
+  /jboss-as-7.1.1.Final/bin/add-user.sh --silent=true admin ${JBOSS_PASS}
+
 EXPOSE 8080 9990
+
 CMD ["/run.sh"]
