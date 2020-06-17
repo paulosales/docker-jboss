@@ -2,9 +2,9 @@
 
 Docker image that runs JBoss over Openjdk.
 
-## Image tags
+## Supported tags and respective `Dockerfile` links
 
-* [`7`, `7-alpine`, `latest`](https://github.com/paulosales/docker-jboss/blob/master/Dockerfile) - Jboss 7 over Openjdk 7
+* [`7`, `7-alpine`, `latest`](https://github.com/paulosales/docker-jboss/blob/master/Dockerfile) - JBoss 7.1.1 over Openjdk 7
 
 ## Usage
 
