@@ -1,0 +1,39 @@
+
+sudo: true
+dist: trusty
+
+jobs:
+  latest:
+    if: branch == master
+    - stage: build image
+      script:
+      - docker system prune -af --volumes
+      - docker build -t prsales/jboss .
+      - echo ${DOCKER_PASSWORD} | docker login -u prsales --password-stdin
+      - docker tag  prsales/jboss prsales/jboss:latest
+    - stage: test image
+      script: docker run --rm prsales/jboss:latest cat hello.txt
+    - stage: pushing image
+      script: docker push prsales/jboss:latest
+  v7:
+    if: tag ~= 7$
+    script:
+      - docker system prune -af --volumes
+      - docker build -t prsales/jboss ./v7
+      - echo ${DOCKER_PASSWORD} | docker login -u prsales --password-stdin
+      - docker tag  prsales/jboss prsales/jboss:7
+      - stage: test image
+        script: docker run --rm prsales/jboss:7 cat hello.txt
+      - stage: pushing image
+        script: docker push prsales/jboss:7
+  v7-alpine:
+    if: tag ~= 7-alpine$
+    script:
+      - docker system prune -af --volumes
+      - docker build -t prsales/jboss ./v7/alpine
+      - echo ${DOCKER_PASSWORD} | docker login -u prsales --password-stdin
+      - docker tag  prsales/jboss prsales/jboss:7-alpine
+      - stage: test image
+        script: docker run --rm prsales/jboss:7-alpine cat hello.txt
+      - stage: pushing image
+        script: docker push prsales/jboss:7-alpine
