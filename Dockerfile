@@ -13,7 +13,7 @@ RUN apk update && \
 
 ADD run.sh /run.sh
 
-ENV JBOSS_PASS admin
+ENV JBOSS_PASS adminpwd
 
 RUN chmod +x /*.sh && \
   sed -i -r 's/jboss.bind.address.management:127.0.0.1/jboss.bind.address.management:0.0.0.0/' /jboss-as-7.1.1.Final/standalone/configuration/standalone.xml && \

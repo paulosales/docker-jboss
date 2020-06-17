@@ -14,7 +14,7 @@ docker run -d -p 8080:8080 -p 9990:9990 prsales/jboss
 
 ## The default admin password
 
-The default admin password is `admin`. You can specify a customized password using the environment variable `JBOSS_PASS` like that:
+The default admin username is `admin` and his password is `adminpwd`. You can specify a customized password using the environment variable `JBOSS_PASS` like that:
 
 ```bash
 docker run -d -p 8080:8080 -p 9990:9990 -e JBOSS_PASS="mypass" prsales/jboss
