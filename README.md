@@ -1,6 +1,6 @@
 # prsales/jboss - [![Build Status](https://travis-ci.com/paulosales/docker-jboss.svg?branch=master)](https://travis-ci.com/paulosales/docker-jboss)
 
-Docker image that runs JBoss over Openjdk.
+Docker image that runs JBoss AS over Openjdk.
 
 ## Supported tags and respective `Dockerfile` links
 
